@@ -21,7 +21,7 @@ keep track to each of his investment .
 
 - As a User, I will be able to make an account and log into my account.
 - As a User, I will be able to check my investing options.
-- As a User, I will analyse certain stocks and ETFs by data and graphs.
+- As a User, I will analyse certain stocks and ETFs .
 - As a User, I will be manage my investment portfolio.
 - As a User, I will be to see how much money can possibly grow if I invest money there.
 - As a User, I will be able to view advise given by expert stock investors.
