@@ -20,8 +20,11 @@ public class Client {
 
 
     Scanner in = new Scanner(System.in);
+    //REQUIRES : income > 0 and should be an integer
+    //EFFECTS : it sets the name , income along with occupation
 
     public Client(String name, int income, String occupation) {
+
         this.name = name;
         this.income = income;
         this.occupation = occupation;
