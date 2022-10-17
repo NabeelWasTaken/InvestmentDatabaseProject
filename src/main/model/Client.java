@@ -35,7 +35,7 @@ public class Client {
         double recAmt = (income * 20) / 100;
         if (income <= 15000) {
             return (int) (recAmt + (recAmt * 0.10));
-        } else if (income > 15000 && income < 40000) {
+        } else if (income > 15000 && income <= 40000) {
             return (int) (recAmt + (recAmt * 0.15));
         } else {
             return (int) (recAmt + (recAmt * 0.25));
