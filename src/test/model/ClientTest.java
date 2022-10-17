@@ -13,12 +13,16 @@ class ClientTest {
     Client c1;
     Client c2;
     Client c3;
+    Client c4;
 
     @BeforeEach
     void runBefore(){
         c1 = new Client("Rahul",12000,"SWE@Google");
         c2 = new Client("Mike",20000,"CTO@Meta");
+
         c3 = new Client("Tim",250000,"CEO@Apple");
+
+        c4 = new Client("Tom",27500,"SWE@Netflix");
 
     }
     @Test
@@ -27,10 +31,11 @@ class ClientTest {
         assertEquals(2640,c1.returnAmt());
         assertEquals(4600,c2.returnAmt());
         assertEquals(62500,c3.returnAmt());
+        assertEquals(6325,c4.returnAmt());
 
     }
     @Test
-    void testaddEntries(){
+    void testAddEntries(){
         List<Object> test1 = Arrays.asList("S&P500",2000,7000,"Wealthsimple");
         assertEquals(test1.size(),c1.addEntries("S&P500",2000,7000,"Wealthsimple").size());
         assertEquals(test1,c1.addEntries("S&P500",2000,7000,"Wealthsimple"));
