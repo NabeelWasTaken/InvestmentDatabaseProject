@@ -41,7 +41,35 @@ public class Main {
             int op = in.nextInt();
 
             while (op == 1) {
-                customer.investmentOptions();
+
+                System.out.println("Welcome, You have chosen to avail our \"Investment Option for Beginners\" Service");
+                System.out.println("This will help you get started and recommend you where to invest your money");
+                System.out.println("The income you have provided to us is : " + income);
+                double recAmt = (income * 20) / 100;
+                System.out.println("The recommended amount for you to invest : " + recAmt + "%");
+                if (income <= 15000) {
+                    System.out.println(" The best way for you to start is to invest in the \"stock market\" ");
+                    System.out.println(" Your safest bets would be to invest in index funds namely :");
+                    System.out.println(" S&P 500 : Index fund Comprising of the top 500 companies in America");
+                    System.out.println(" Dow Jones IA : It is an index fund of top 30 American companies");
+                    System.out.println(" Companies which have potential to grow in the coming future");
+                    System.out.println("Risk is LOW");
+                    System.out.println(" Your investment could increase by : " + customer.returnAmt() + "annually.");
+                    System.out.println("Would you like to avail any other services ?");
+                } else if (income > 15000 && income < 40000) {
+                    System.out.println(" The best way for you to start is to invest in the \"Government Bonds\" ");
+                    System.out.println(" Govt Bond are debts gives to the respective country to support their funding");
+                    System.out.println(" Its recommended to invest in bonds of those countries with stable economies");
+                    System.out.println("Risk is MEDIUM");
+                    System.out.println(" Your investment could increase by : " + customer.returnAmt() + "annually.");
+                    System.out.println("Would you like to avail any other services ?");
+                } else {
+                    System.out.println(" Considering you have a good income already.");
+                    System.out.println(" It is recommended for you to buy some real estate as they have high returns");
+                    System.out.println(" Risk is HIGH");
+                    System.out.println(" Your investment could increase by : " + customer.returnAmt() + "annually.");
+
+                }
                 System.out.println(" Would you like to avail any other services?");
                 System.out.println("---------SERVICES-------------");
                 System.out.println(" (1) Investment Option for Beginners");
@@ -63,7 +91,15 @@ public class Main {
                 op = in.nextInt();
             }
             while (op == 3) {
-                customer.viewInvestment();
+                System.out.println("Hello " + name + ", You have chosen to our \"Mange Your Investment Portfolio \" ");
+                System.out.println("This service will help you add or view investments you have added before");
+                System.out.println("Pls choose what would you like to do : ");
+                System.out.println("---------SERVICES-------------");
+                System.out.println(" (1) Add an Investment");
+//        System.out.println(" (2) View previous investments");
+                System.out.println("------------------------------");
+                int ch = in.nextInt();
+                customer.viewInvestment(ch);
                 System.out.println(" Would you like to avail any other services?");
                 System.out.println("---------SERVICES-------------");
                 System.out.println(" (1) Investment Option for Beginners");

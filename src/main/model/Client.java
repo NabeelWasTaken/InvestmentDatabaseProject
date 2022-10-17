@@ -11,6 +11,8 @@ public class Client {
     double income;
     String occupation;
 
+
+
     Scanner in = new Scanner(System.in);
 
     public Client(String name, double income, String occupation) {
@@ -19,42 +21,8 @@ public class Client {
         this.occupation = occupation;
     }
 
-    @SuppressWarnings("methodlength")
-    //REQUIRES : income > 0
-    //EFFECTS : Provides the user with investment options based on his income and provides
-    // a rough estimate of return he/she could get if he invests in that option.
-    public void investmentOptions() {
-        System.out.println("Welcome, You have chosen to avail our \"Investment Option for Beginners\" Service");
-        System.out.println("This will help you get started and recommend you where to invest your money");
-        System.out.println("The income you have provided to us is : " + income);
-        double recAmt = (income * 20) / 100;
-        System.out.println("The recommended amount for you to invest : " + recAmt + "%");
-        if (income <= 15000) {
-            System.out.println(" The best way for you to start is to invest in the \"stock market\" ");
-            System.out.println(" Your safest bets would be to invest in index funds namely :");
-            System.out.println(" S&P 500 : Index fund Comprising of the top 500 companies in America");
-            System.out.println(" Dow Jones IA : It is an index fund of top 30 American companies");
-            System.out.println(" Companies which have potential to grow in the coming future");
-            System.out.println("Risk is LOW");
-            System.out.println(" Your investment could potentially increase by : " + returnAmt() + "annually.");
-            System.out.println("Would you like to avail any other services ?");
-        } else if (income > 15000 && income < 40000) {
-            System.out.println(" The best way for you to start is to invest in the \"Government Bonds\" ");
-            System.out.println(" Govt Bond are debts gives to the respective country to support their funding");
-            System.out.println(" Its recommended to invest in bonds of those countries with stable economies");
-            System.out.println("Risk is MEDIUM");
-            System.out.println(" Your investment could potentially increase by : " + returnAmt() + "annually.");
-            System.out.println("Would you like to avail any other services ?");
-        } else {
-            System.out.println(" Considering you have a good income already.");
-            System.out.println(" It is recommended for you to buy some real estate as they have high returns");
-            System.out.println(" Risk is HIGH");
-            System.out.println(" Your investment could potentially increase by : " + returnAmt() + "annually.");
-
-        }
 
 
-    }
     //REQUIRES : income > 0.
     //EFFECTS : returns the amount the user could possibly get achieve.
 
@@ -116,18 +84,10 @@ public class Client {
     //REQUIRES : User to follow menu strictly.
     //EFFECTS : provides the summary of investments that have been added
 
-    public void viewInvestment() {
-
-        System.out.println("Hello " + name + ", You have chosen to avail our \"Mange Your Investment Portfolio \"");
-        System.out.println("This service will help you add or view investments you have added before");
-        System.out.println("Pls choose what would you like to do : ");
-        System.out.println("---------SERVICES-------------");
-        System.out.println(" (1) Add an Investment");
-//        System.out.println(" (2) View previous investments");
-        System.out.println("------------------------------");
-        int ch = in.nextInt();
+    public void viewInvestment(int ch) {
 
         List<Object> inv = new ArrayList<>();
+
 
         if (ch == 1) {
             System.out.println("Pls add your investment details below : ");

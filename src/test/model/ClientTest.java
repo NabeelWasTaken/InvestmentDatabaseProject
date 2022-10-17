@@ -42,6 +42,12 @@ class ClientTest {
         assertEquals(test3,c1.addEntries("TESLA",2000,7000,"Century"));
 
     }
+    @Test
+    void testAddEntries(){
+
+
+
+    }
 
 
 
