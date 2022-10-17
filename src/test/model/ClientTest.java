@@ -1,6 +1,6 @@
 package model;
 
-
+import model.Client;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
