@@ -13,6 +13,7 @@ public class Client {
 
     List<Double> expenses;
     List<String> expenseNames;
+    List<Object> inv;
 
 
     Scanner in = new Scanner(System.in);
@@ -96,7 +97,6 @@ public class Client {
 
     public void viewInvestment(String invName, int amtInv, int currVal, String platform) {
 
-        List<Object> inv = new ArrayList<>();
 
         inv = addEntries(invName, amtInv, currVal, platform);
 
@@ -108,9 +108,9 @@ public class Client {
 
         }
         System.out.println("-------DONE!!--------");
-
-
     }
+
+
 
 
 }

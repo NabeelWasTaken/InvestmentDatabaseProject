@@ -30,7 +30,7 @@ class ClientTest {
 
     }
     @Test
-    void testViewInvestments(){
+    void testaddEntries(){
         List<Object> test1 = Arrays.asList("S&P500",2000,7000,"Wealthsimple");
         assertEquals(test1.size(),c1.addEntries("S&P500",2000,7000,"Wealthsimple").size());
         assertEquals(test1,c1.addEntries("S&P500",2000,7000,"Wealthsimple"));
@@ -42,10 +42,7 @@ class ClientTest {
         assertEquals(test3,c1.addEntries("TESLA",2000,7000,"Century"));
 
     }
-    @Test
-    void testAddEntries(){
 
-    }
     @Test
     void testManageYourExpenses(){
 
@@ -81,14 +78,26 @@ class ClientTest {
         assertTrue(c3.expenseNames.contains("entertainment"));
         assertTrue(c3.expenseNames.contains("food"));
         assertTrue(c3.expenseNames.contains("miscellaneous items"));
+    }
+    @Test
+    void testViewYourInvestment(){
+        c1.viewInvestment("S&P500",2000,7000,"Wealthsimple");
+        assertEquals("S&P500",c1.inv.get(0));
+        assertEquals(2000,c1.inv.get(1));
+        assertEquals(7000,c1.inv.get(2));
+        assertEquals("Wealthsimple",c1.inv.get(3));
 
+        c2.viewInvestment("V00",5000,100000,"Century Brokers");
+        assertEquals("V00",c2.inv.get(0));
+        assertEquals(5000,c2.inv.get(1));
+        assertEquals(100000,c2.inv.get(2));
+        assertEquals("Century Brokers",c2.inv.get(3));
 
-
-
-
-
-
-
+        c3.viewInvestment("Tesla", 1000, 2000,"HDFC Bank");
+        assertEquals("Tesla",c3.inv.get(0));
+        assertEquals(1000,c3.inv.get(1));
+        assertEquals(2000,c3.inv.get(2));
+        assertEquals("HDFC Bank",c3.inv.get(3));
 
 
 
