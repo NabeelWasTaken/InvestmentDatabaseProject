@@ -15,6 +15,9 @@ public class Client {
     List<String> expenseNames;
     List<Object> inv;
 
+    double sum;
+
+
 
     Scanner in = new Scanner(System.in);
 
@@ -46,13 +49,9 @@ public class Client {
 
     public void manageYourExpenses(double groc, double ent, double food, double misItems) {
 
-        double sum = groc + ent + food + misItems;
+        sum = groc + ent + food + misItems;
         double sumPerc = ((sum / income) * 100);
         System.out.println("You have spent " + sumPerc + " % of your income this month");
-        if (sumPerc > 50) {
-            System.out.println("You're expenses this month is really high!!");
-            System.out.println("It is recommended to only spending  lower than 50% of your income on expenses");
-        }
         expenseNames = Arrays.asList("groceries", "entertainment", "food", "miscellaneous items");
         expenses = Arrays.asList(groc, ent, food, misItems);
         System.out.println("You have spent :");
@@ -61,6 +60,7 @@ public class Client {
             System.out.println((expenses.get(i) / income) * 100 + fillUp + expenseNames.get(i));
         }
     }
+
 
     public double getGrocPerc(double groc) {
         return groc;
