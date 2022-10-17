@@ -12,7 +12,6 @@ public class Client {
     String occupation;
 
 
-
     Scanner in = new Scanner(System.in);
 
     public Client(String name, double income, String occupation) {
@@ -20,7 +19,6 @@ public class Client {
         this.income = income;
         this.occupation = occupation;
     }
-
 
 
     //REQUIRES : income > 0.
@@ -42,16 +40,8 @@ public class Client {
     //EFFECTS : Asks the user his monthly expenses and the method calculates whether he is overspending or not
     //Also provides with what proportion of his income was spent on these expenses.
 
-    public void manageYourExpenses() {
-        System.out.println("Hello " + name + ", You have chosen to avail our \"Manage your Expense\" Service");
-        System.out.println("How much money have you spent on \"groceries\" this month : ");
-        int groc = in.nextInt();
-        System.out.println("How much money have you spent on \"entertainment\" this month : ");
-        int ent = in.nextInt();
-        System.out.println("How much money have you spent on \"eating\" out this month : ");
-        int food = in.nextInt();
-        System.out.println("How much money have you spent on \"miscellaneous items\" this month : ");
-        int misItems = in.nextInt();
+    public void manageYourExpenses(int groc, int ent, int food, int misItems) {
+
         int sum = groc + ent + food + misItems;
         double sumPerc = ((sum / income) * 100);
         System.out.println("You have spent " + sumPerc + " % of your income this month");
@@ -67,9 +57,26 @@ public class Client {
             System.out.println((expenses.get(i) / income) * 100 + fillUp + expenseNames.get(i));
         }
     }
+
+    public double getGrocPerc(int groc) {
+        return (groc / income) * 100;
+    }
+
+    public double getEntPerc(int ent) {
+        return (ent / income) * 100;
+    }
+
+    public double getFoodPerc(int food) {
+
+        return (food / income) * 100;
+    }
+
+    public double getMisItemsPerc(int misItems) {
+        return (misItems / income) * 100;
+    }
     //EFFECTS : Add entries to an ArrayList inv
 
-    public List<Object> addEntries(String invName,int amtInv,int currVal,String platform) {
+    public List<Object> addEntries(String invName, int amtInv, int currVal, String platform) {
         List<Object> inv = new ArrayList<>();
 
         inv.add(invName);
@@ -84,42 +91,23 @@ public class Client {
     //REQUIRES : User to follow menu strictly.
     //EFFECTS : provides the summary of investments that have been added
 
-    public void viewInvestment(int ch) {
+    public void viewInvestment(String invName, int amtInv, int currVal, String platform) {
 
         List<Object> inv = new ArrayList<>();
 
-
-        if (ch == 1) {
-            System.out.println("Pls add your investment details below : ");
-            System.out.println("Pls enter the name of the  investment you wish to add");
-            String invName = in.next();
-            System.out.println("How much capital did you invest in this investment initially : ");
-            int amtInv = in.nextInt();
-            System.out.println("Current Value of this investment : ");
-            int currVal = in.nextInt();
-            System.out.println("% change in Investment : " + ((currVal - amtInv) / amtInv) + "%");
-            System.out.println("Which platform did you invest in :");
-            String platform = in.next();
-            addEntries(invName,amtInv,currVal,platform);
-//            System.out.println("Would you like to add more investments ?");
-//            System.out.println("Press 1 if you want to add more or any number to view a summary");
-//            ch = in.nextInt();
-            inv = addEntries(invName,amtInv,currVal,platform);
-        }
+        inv = addEntries(invName, amtInv, currVal, platform);
 
         System.out.println("Here is a summary of your investment(s)");
 
         for (int i = 0; i < inv.size(); i++) {
+
             System.out.println(inv.get(i));
 
         }
         System.out.println("-------DONE!!--------");
 
 
-
-
     }
-
 
 
 }

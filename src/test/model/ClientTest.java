@@ -45,9 +45,19 @@ class ClientTest {
     @Test
     void testAddEntries(){
 
-
-
     }
+//    @Test
+//    void testManageYourExpenses(){
+////        c1.manageYourExpenses(12,34,56,78);
+//       c1.manageYourExpenses(20,20,20,20);
+//
+//       assertEquals(c1.getGrocPerc(20),c1.manageYourExpenses(20,20,20,20));
+//
+//
+//        List<Integer> test;
+//
+//
+//    }
 
 
 

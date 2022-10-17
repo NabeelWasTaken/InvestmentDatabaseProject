@@ -80,7 +80,16 @@ public class Main {
                 op = in.nextInt();
             }
             while (op == 2) {
-                customer.manageYourExpenses();
+                System.out.println("Hello " + name + ", You have chosen to avail our \"Manage your Expense\" Service");
+                System.out.println("How much money have you spent on \"groceries\" this month : ");
+                int groc = in.nextInt();
+                System.out.println("How much money have you spent on \"entertainment\" this month : ");
+                int ent = in.nextInt();
+                System.out.println("How much money have you spent on \"eating\" out this month : ");
+                int food = in.nextInt();
+                System.out.println("How much money have you spent on \"miscellaneous items\" this month : ");
+                int misItems = in.nextInt();
+                customer.manageYourExpenses(groc,ent,food,misItems);
                 System.out.println(" Would you like to avail any other services?");
                 System.out.println("---------SERVICES-------------");
                 System.out.println(" (1) Investment Option for Beginners");
@@ -96,10 +105,25 @@ public class Main {
                 System.out.println("Pls choose what would you like to do : ");
                 System.out.println("---------SERVICES-------------");
                 System.out.println(" (1) Add an Investment");
-//        System.out.println(" (2) View previous investments");
+//              System.out.println(" (2) View previous investments");
                 System.out.println("------------------------------");
                 int ch = in.nextInt();
-                customer.viewInvestment(ch);
+                if (ch == 1) {
+                    System.out.println("Pls add your investment details below : ");
+                    System.out.println("Pls enter the name of the  investment you wish to add");
+                    String invName = in.next();
+                    in.nextLine();
+                    System.out.println("How much capital did you invest in this investment initially : ");
+                    int amtInv = in.nextInt();
+                    System.out.println("Current Value of this investment : ");
+                    int currVal = in.nextInt();
+                    System.out.println("% change in Investment : " + ((currVal - amtInv) / amtInv) * 100 + "%");
+                    System.out.println("Which platform did you invest in :");
+                    String platform = in.next();
+                    in.nextLine();
+                    customer.addEntries(invName, amtInv, currVal, platform);
+                    customer.viewInvestment(invName, amtInv, currVal, platform);
+                }
                 System.out.println(" Would you like to avail any other services?");
                 System.out.println("---------SERVICES-------------");
                 System.out.println(" (1) Investment Option for Beginners");
@@ -109,7 +133,6 @@ public class Main {
                 System.out.println("Input of any number to end the program");
                 op = in.nextInt();
             }
-
 
         }
 
