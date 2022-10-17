@@ -8,7 +8,7 @@ import java.util.List;
 public class Client {
 
     String name;
-    double income;
+    int income;
     String occupation;
 
     List<Double> expenses;
@@ -21,7 +21,7 @@ public class Client {
 
     Scanner in = new Scanner(System.in);
 
-    public Client(String name, double income, String occupation) {
+    public Client(String name, int income, String occupation) {
         this.name = name;
         this.income = income;
         this.occupation = occupation;

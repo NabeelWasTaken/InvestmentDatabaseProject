@@ -30,7 +30,7 @@ public class Main {
             System.out.println("What is your Occupation : ");
             String occupation = in.next();
             System.out.println("What is your income earned per month : ");
-            double income = in.nextDouble();
+            int income = in.nextInt();
             Client customer = new Client(name, income, occupation);
             System.out.println("\nHello " + name + " , Which one of these services are you interested in availing?");
             System.out.println("---------SERVICES-------------");
