@@ -46,18 +46,53 @@ class ClientTest {
     void testAddEntries(){
 
     }
-//    @Test
-//    void testManageYourExpenses(){
-////        c1.manageYourExpenses(12,34,56,78);
-//       c1.manageYourExpenses(20,20,20,20);
-//
-//       assertEquals(c1.getGrocPerc(20),c1.manageYourExpenses(20,20,20,20));
-//
-//
-//        List<Integer> test;
-//
-//
-//    }
+    @Test
+    void testManageYourExpenses(){
+
+       c1.manageYourExpenses(20,20,20,20);
+       assertEquals(c1.getGrocPerc(20),c1.expenses.get(0));
+       assertEquals(c1.getEntPerc(20),c1.expenses.get(1));
+       assertEquals(c1.getFoodPerc(20),c1.expenses.get(2));
+       assertEquals(c1.getMisItemsPerc(20),c1.expenses.get(3));
+
+       assertTrue(c1.expenseNames.contains("groceries"));
+       assertTrue(c1.expenseNames.contains("entertainment"));
+       assertTrue(c1.expenseNames.contains("food"));
+       assertTrue(c1.expenseNames.contains("miscellaneous items"));
+
+        c2.manageYourExpenses(75,90,100,45);
+        assertEquals(c2.getGrocPerc(75),c2.expenses.get(0));
+        assertEquals(c2.getEntPerc(90),c2.expenses.get(1));
+        assertEquals(c2.getFoodPerc(100),c2.expenses.get(2));
+        assertEquals(c2.getMisItemsPerc(45),c2.expenses.get(3));
+
+        assertTrue(c2.expenseNames.contains("groceries"));
+        assertTrue(c2.expenseNames.contains("entertainment"));
+        assertTrue(c2.expenseNames.contains("food"));
+        assertTrue(c2.expenseNames.contains("miscellaneous items"));
+
+        c3.manageYourExpenses(125,110,190,115);
+        assertEquals(c3.getGrocPerc(125),c3.expenses.get(0));
+        assertEquals(c3.getEntPerc(110),c3.expenses.get(1));
+        assertEquals(c3.getFoodPerc(190),c3.expenses.get(2));
+        assertEquals(c3.getMisItemsPerc(115),c3.expenses.get(3));
+
+        assertTrue(c3.expenseNames.contains("groceries"));
+        assertTrue(c3.expenseNames.contains("entertainment"));
+        assertTrue(c3.expenseNames.contains("food"));
+        assertTrue(c3.expenseNames.contains("miscellaneous items"));
+
+
+
+
+
+
+
+
+
+
+
+    }
 
 
 

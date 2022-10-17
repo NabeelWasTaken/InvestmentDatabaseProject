@@ -11,6 +11,9 @@ public class Client {
     double income;
     String occupation;
 
+    List<Double> expenses;
+    List<String> expenseNames;
+
 
     Scanner in = new Scanner(System.in);
 
@@ -40,17 +43,17 @@ public class Client {
     //EFFECTS : Asks the user his monthly expenses and the method calculates whether he is overspending or not
     //Also provides with what proportion of his income was spent on these expenses.
 
-    public void manageYourExpenses(int groc, int ent, int food, int misItems) {
+    public void manageYourExpenses(double groc, double ent, double food, double misItems) {
 
-        int sum = groc + ent + food + misItems;
+        double sum = groc + ent + food + misItems;
         double sumPerc = ((sum / income) * 100);
         System.out.println("You have spent " + sumPerc + " % of your income this month");
         if (sumPerc > 50) {
             System.out.println("You're expenses this month is really high!!");
             System.out.println("It is recommended to only spending  lower than 50% of your income on expenses");
         }
-        List<String> expenseNames = Arrays.asList("groceries", "entertainment", "food", "miscellaneous items");
-        List<Integer> expenses = Arrays.asList(groc, ent, food, misItems);
+        expenseNames = Arrays.asList("groceries", "entertainment", "food", "miscellaneous items");
+        expenses = Arrays.asList(groc, ent, food, misItems);
         System.out.println("You have spent :");
         String fillUp = " % of your income/allowance on ";
         for (int i = 0; i < expenses.size(); i++) {
@@ -58,21 +61,21 @@ public class Client {
         }
     }
 
-    public double getGrocPerc(int groc) {
-        return (groc / income) * 100;
+    public double getGrocPerc(double groc) {
+        return groc;
     }
 
-    public double getEntPerc(int ent) {
-        return (ent / income) * 100;
+    public double getEntPerc(double ent) {
+        return ent;
     }
 
-    public double getFoodPerc(int food) {
+    public double getFoodPerc(double food) {
 
-        return (food / income) * 100;
+        return food;
     }
 
-    public double getMisItemsPerc(int misItems) {
-        return (misItems / income) * 100;
+    public double getMisItemsPerc(double misItems) {
+        return misItems;
     }
     //EFFECTS : Add entries to an ArrayList inv
 
