@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Arrays;
+import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,20 +19,18 @@ public class Client {
 
 
 
-    //REQUIRES : income > 0 and should be an integer
-    //EFFECTS : it sets the name , income along with occupation
-    public Client(String name, int income, String occupation) {
+    Scanner in = new Scanner(System.in);
 
+    public Client(String name, int income, String occupation) {
         this.name = name;
         this.income = income;
         this.occupation = occupation;
-
-        inv = new ArrayList<>();
     }
 
 
     //REQUIRES : income > 0.
     //EFFECTS : returns the amount the user could possibly get achieve.
+
     public int returnAmt() {
         double recAmt = (income * 20) / 100;
         if (income <= 15000) {
@@ -44,10 +43,10 @@ public class Client {
         }
 
     }
-
     //REQUIRES : groc+ent+misItems+food < income
     //EFFECTS : Asks the user his monthly expenses and the method calculates whether he is overspending or not
     //Also provides with what proportion of his income was spent on these expenses.
+
     public void manageYourExpenses(double groc, double ent, double food, double misItems) {
 
         sum = groc + ent + food + misItems;
@@ -79,8 +78,8 @@ public class Client {
     public double getMisItemsPerc(double misItems) {
         return misItems;
     }
-
     //EFFECTS : Add entries to an ArrayList inv
+
     public List<Object> addEntries(String invName, int amtInv, int currVal, String platform) {
         List<Object> inv = new ArrayList<>();
 
@@ -94,14 +93,12 @@ public class Client {
 
     @SuppressWarnings("methodlength")
     //REQUIRES : User to follow menu strictly.
-    //EFFECTS :  provides the summary of investments that have been added
+    //EFFECTS : provides the summary of investments that have been added
+
     public void viewInvestment(String invName, int amtInv, int currVal, String platform) {
 
-        inv = new ArrayList<>();
-        inv.add(invName);
-        inv.add(amtInv);
-        inv.add(currVal);
-        inv.add(platform);
+
+        inv = addEntries(invName, amtInv, currVal, platform);
 
         System.out.println("Here is a summary of your investment(s)");
 
