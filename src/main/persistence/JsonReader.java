@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 import org.json.*;
 
-// Is a reader that reads data from Client from JSON data stored in file.
+// Is a reader that reads data from ExpenseDataBase and InvestmentDataBase from JSON data stored in file.
 public class JsonReader {
 
     private InvestmentDataBase idb;
@@ -27,19 +27,19 @@ public class JsonReader {
 
     }
 
-
+    //EFFECTS : returns InvestmentDataBase to JSON
     public InvestmentDataBase read() {
         return idb;
     }
 
 
-
+    //EFFECTS : Creates an InvestmentDatabase array that can be read by JSON Object.
     public ArrayList<Investment> createIdbArrayList(String f) throws IOException {
         ArrayList<Investment> arr = new ArrayList<>();
         String json = readFile(f);
         JSONObject obj = new JSONObject(json);
         JSONArray jarr = new JSONArray(obj.getJSONArray("Investments"));
-        for (Object k: jarr) {
+        for (Object k : jarr) {
             JSONObject x = (JSONObject) k;
             Investment investment = new Investment(x.getString("name"), x.getInt("moneyInv"),
                     x.getInt("currVal"), x.getString("platform"));
@@ -48,12 +48,13 @@ public class JsonReader {
         return arr;
     }
 
+    //EFFECTS : Creates an InvestmentDatabase array that can be read by JSON Object.
     public ArrayList<Expense> createEdbArrayList(String f) throws IOException {
         ArrayList<Expense> arr = new ArrayList<>();
         String json = readFile(f);
         JSONObject obj = new JSONObject(json);
         JSONArray jarr = new JSONArray(obj.getJSONArray("Expenses"));
-        for (Object k: jarr) {
+        for (Object k : jarr) {
             JSONObject x = (JSONObject) k;
             Expense expense = new Expense(x.getInt("moneySptOnEat"), x.getInt("moneySptOnEnt"),
                     x.getInt("moneySptOnMI"), x.getInt("moneySptOnGroc"));
@@ -62,6 +63,8 @@ public class JsonReader {
         return arr;
     }
 
+    //REQUIRES : source as a parameter.
+    //EFFECTS  : reads the file.
     private String readFile(String source) throws IOException {
         StringBuilder contentBuilder = new StringBuilder();
 

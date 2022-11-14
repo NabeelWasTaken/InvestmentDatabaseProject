@@ -130,25 +130,21 @@ public class App {
 
 
         } else if (choice == 2) {
-            System.out.println("Pls enter your password : "); //Can this be stored in JSON.
-            String pass = in.next();
-            if (pass.equals(passwd)) {
-                System.out.println("Welcome" + name + ", It's great to have you back! ");
-                System.out.println(" What would you like to do today ?");
-                System.out.println("---------MENU-------------------------");
-                System.out.println(" (1) View Added Investment(s)");
-                System.out.println(" (2) View your Expenses");
-                int retUser = in.nextInt();
-                if (retUser == 1) {
-                    System.out.println("Here is a summary of your Investment portfolio :");
-                    loadInvestmentsDB();
-                } else if (retUser == 2) {
-                    System.out.println("You have chosen to view your expenses : ");
+
+            System.out.println("Welcome, It's great to have you back! ");
+            System.out.println(" What would you like to do today ?");
+            System.out.println("---------MENU-------------------------");
+            System.out.println(" (1) View Added Investment(s)");
+            System.out.println(" (2) View your Expenses");
+            int retUser = in.nextInt();
+            if (retUser == 1) {
+                System.out.println("Here is a summary of your Investment portfolio :");
+                loadInvestmentsDB();
+            } else if (retUser == 2) {
+                System.out.println("You have chosen to view your expenses : ");
 
 
-                }
             }
-
         }
 
 

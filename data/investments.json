@@ -1,1 +1,6 @@
-{"Investments": []}
+{"Investments": [{
+    "moneyInv": 300,
+    "currVal": 750,
+    "name": "S&P",
+    "platform": "WealthSimple"
+}]}

@@ -5,6 +5,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
+//It will print the expenses and investment data added by the user
+//to the console.
 public class Client {
 
     String name;

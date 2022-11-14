@@ -26,7 +26,7 @@ keep track to each of his investment .
 - As a User, I will be to see how much money can possibly grow if I invest money there.
 - As a User, I will be able to view advise given by expert stock investors.
 - As a User, I will be able to retrieve my investment portfolio.
-- As a User, I will be able to view my added data.
+- As a User, I will be able to view my added expenses.
 
 
 **Why is this project interest to me?**

@@ -1,6 +1,6 @@
 {"Expenses": [{
-    "moneySptOnEat": 60,
+    "moneySptOnEat": 30,
     "moneySptOnEnt": 40,
-    "moneySptOnMI": 30,
-    "moneySptOnGroc": 50
+    "moneySptOnMI": 50,
+    "moneySptOnGroc": 60
 }]}
