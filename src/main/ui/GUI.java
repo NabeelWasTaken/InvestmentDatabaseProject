@@ -14,7 +14,7 @@ public class GUI implements ActionListener {
     JFrame frame;
     JPanel panel;
     JPanel newClientPanel;
-    JLabel label;
+    JLabel nameLabel;
     JLabel label1;
     Border border;
     JTextField textField;
@@ -27,10 +27,13 @@ public class GUI implements ActionListener {
 
     public GUI() {
         panel = new JPanel();
-        label = new JLabel();
+        newClientPanel = new JPanel();
+        nameLabel = new JLabel();
         label1 = new JLabel();
         newClientButton = new JButton();
-        newClientPanel = new JPanel();
+        viewInvestmentOptions = new JButton();
+        manageYourExpenses = new JButton();
+        manageYourInv = new JButton();
 
 
         setFrame();
@@ -39,7 +42,7 @@ public class GUI implements ActionListener {
 
     void setFrame() {
         textField = new JTextField();
-        textField.setBackground(new Color(240,230,140));
+        textField.setBackground(new Color(240, 230, 140));
         textField.setBounds(0, 0, 800, 150);
         textField.setOpaque(true);
         textField.setFont(new Font("Times New Roman", Font.BOLD, 30));
@@ -68,9 +71,9 @@ public class GUI implements ActionListener {
 
 
     @SuppressWarnings("methodlength")
-    JPanel setPanel() {
+    void setPanel() {
 
-        panel.setBackground(new Color(240,230,140));
+        panel.setBackground(new Color(240, 230, 140));
         panel.setBounds(200, 300, 400, 200);
 
         label1.setText("Pls Enter your Information Below : ");
@@ -78,27 +81,25 @@ public class GUI implements ActionListener {
         label1.setFont(new Font("MV", Font.PLAIN, 10));
         label1.setVisible(true);
 
-        label.setText("Name :");
-        label.setForeground(Color.black);
-        label.setFont(new Font("MV", Font.PLAIN, 20));
-        label.setVerticalTextPosition(JLabel.CENTER);
+        nameLabel.setText("Name :");
+        nameLabel.setForeground(Color.black);
+        nameLabel.setFont(new Font("MV", Font.PLAIN, 20));
+        nameLabel.setVerticalTextPosition(JLabel.CENTER);
 
         nameTextField = new JTextField();
         nameTextField.setBounds(75, 85, 300, 30);
 
         newClientButton = new JButton("New Customer");
-        newClientButton.setBounds(240,140,150,30);
+        newClientButton.setBounds(240, 140, 150, 30);
         newClientButton.addActionListener(this);
 
         oldClientButton = new JButton("Old Customer");
-        oldClientButton.setBounds(10,140,150,30);
+        oldClientButton.setBounds(10, 140, 150, 30);
         oldClientButton.addActionListener(this);
-
 
 
 //        label.setHorizontalTextPosition(11);
 ////        label.setVerticalTextPosition(10);
-
 
 
         panel.setLayout(new BorderLayout());
@@ -106,7 +107,7 @@ public class GUI implements ActionListener {
         panel.add(oldClientButton);
         panel.add(label1);
         panel.add(nameTextField);
-        panel.add(label);
+        panel.add(nameLabel);
         panel.setVisible(true);
         frame.add(panel);
 
@@ -115,13 +116,17 @@ public class GUI implements ActionListener {
 
     public JPanel newClientPanel() {
 
-        newClientPanel.setBackground(new Color(240,230,140));
-        panel.setBounds(4800, 3800, 4800, 4800);
+        newClientPanel.setBackground(new Color(240, 230, 140));
+
+        manageYourExpenses.setBounds(240, 140, 150, 30);
+        manageYourInv.setBounds(340,140,150,30);
+
+        panel.setBounds(800, 800, 800, 800);
+
+        newClientPanel.add(manageYourInv);
+        newClientPanel.add(manageYourExpenses);
 
         return newClientPanel;
-
-
-
 
 
     }
