@@ -45,7 +45,7 @@ public class App {
     @SuppressWarnings("methodlength")
     void mainMenu() {
 
-        loadExpenses();
+//        loadExpenses();
 
         //loadInvestmentsDB();
         System.out.println("Welcome to Nabeel's Money Management Firm!");
