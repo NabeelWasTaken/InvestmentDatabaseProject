@@ -27,7 +27,8 @@ keep track to each of his investment .
 - As a User, I will be able to view advise given by expert stock investors.
 - As a User, I will be able to retrieve my investment portfolio.
 - As a User, I will be able to view my added expenses.
-
+- As a User , I will be able to interact with the GUI and add Investment Options.
+- As a User , I will be able to view my saved Investment option in a Table.
 
 **Why is this project interest to me?**
 
@@ -37,5 +38,14 @@ I did not have a lot of knowledge about it.
  Now that I am working on this application it would provide me 
 with a ton of insights into this field and hopefully make this project more interesting and etc.
 
+# Instructions for Grader
 
+- You can generate the first required event related to adding Xs to a Y by 
+noticing that fields from investment class are added to the InvestmentDataBase
+- You can generate the second required event 
+ related to adding Xs to a Y by Viewing your saved Investment details on a JTable
+- You can save the state of my application by clicking on the submitting option on 
+the management of the investments page. 
+- You can reload the state of my application by refreshing my program 
+and clicking on the Existing Customer Button.
   

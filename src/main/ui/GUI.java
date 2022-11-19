@@ -241,6 +241,15 @@ public class GUI implements ActionListener {
         manageYourInv.setBounds(95, 400, 240, 30);
         manageYourInv.addActionListener(this);
 
+        ImageIcon icon = new ImageIcon("/Users/nabeelali/Desktop/cpsc210/project_t9d1e/data/output-onlinepngtools.png");
+        JLabel label = new JLabel();
+        label.setText(" ");
+        label.setLayout(null);
+        label.setBounds(100,50,1000,80);
+        label.setIcon(icon);
+
+        newClientPanel1.add(label);
+
         newClientPanel1.add(manageYourInv);
         newClientPanel1.add(manageYourExpenses);
         newClientPanel1.add(invOptions);
@@ -253,7 +262,7 @@ public class GUI implements ActionListener {
 
 //        newClientPanel.add(incomeLabel);
 
-        newClientPanel.add(new JLabel(icon));
+
         newClientPanel1.setVisible(true);
         newClientPanel.add(newClientPanel1);
 
