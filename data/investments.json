@@ -1,6 +1,20 @@
-{"Investments": [{
-    "moneyInv": 300,
-    "currVal": 750,
-    "name": "S&P",
-    "platform": "WealthSimple"
-}]}
+{"Investments": [
+    {
+        "moneyInv": 300,
+        "currVal": 750,
+        "name": "S&P",
+        "platform": "WealthSimple"
+    },
+    {
+        "moneyInv": 200,
+        "currVal": 500,
+        "name": "VOO",
+        "platform": "IKB"
+    },
+    {
+        "moneyInv": 200,
+        "currVal": 700,
+        "name": "AAPL",
+        "platform": "Century Brokers"
+    }
+]}

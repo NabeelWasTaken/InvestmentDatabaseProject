@@ -142,6 +142,7 @@ public class App {
                 loadInvestmentsDB();
             } else if (retUser == 2) {
                 System.out.println("You have chosen to view your expenses : ");
+                loadExpenses();
 
 
             }
