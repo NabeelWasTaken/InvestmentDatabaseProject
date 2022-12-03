@@ -1,6 +1,8 @@
 package ui;
 
 
+import model.Event;
+import model.EventLog;
 import model.Investment;
 import model.InvestmentDataBase;
 import persistence.JsonWriter;
@@ -12,9 +14,11 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class GUI implements ActionListener {
 
@@ -100,8 +104,9 @@ public class GUI implements ActionListener {
         manageYourExpenses = new JButton("Manage Your Expenses");
         manageYourInv = new JButton(" Manage Your Investments ");
         invOptions = new JButton("Recommended Investing Options");
-        submitButton = new JButton("SUBMIT");
+        submitButton = new JButton("SAVE");
         exitButton = new JButton("EXIT");
+        addInvButton = new JButton("Add More Investments");
 
 
         occupationTextField = new JTextField();
@@ -120,6 +125,7 @@ public class GUI implements ActionListener {
 
 
     //EFFECTS : Sets the main frame of the Graphical User Interface.
+    @SuppressWarnings("methodlength")
     void setFrame() {
         textField = new JTextField();
         textField.setBackground(new Color(240, 230, 140));
@@ -147,7 +153,27 @@ public class GUI implements ActionListener {
         setPanel();
         frame.setVisible(true);
 
+        frame.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                Iterator itr = EventLog.getInstance().iterator();
+                while (itr.hasNext()) {
+                    Event inv = (Event) itr.next();
+                    System.out.println(inv.toString());
+                }
+            }
+        });
+
+
+//        Iterator itr = EventLog.getInstance().iterator();
+//            while (itr.hasNext()) {
+//                Investment inv = (Investment)itr.next();
+//                System.out.println(inv.toString());
+//
+//        }
     }
+
+
 
 
     //EFFECTS : Builds the panel which is eventually used in the main frame
@@ -245,7 +271,7 @@ public class GUI implements ActionListener {
         JLabel label = new JLabel();
         label.setText(" ");
         label.setLayout(null);
-        label.setBounds(100,50,1000,80);
+        label.setBounds(100, 50, 1000, 80);
         label.setIcon(icon);
 
         newClientPanel1.add(label);
@@ -345,6 +371,9 @@ public class GUI implements ActionListener {
 
         investmentPanel.add(investmentPanel1);
 
+        investmentPanel.revalidate();
+        investmentPanel.repaint();
+
 
         return investmentPanel;
     }
@@ -353,8 +382,7 @@ public class GUI implements ActionListener {
     //EFFECTS : When the user clicks on the submit button then the user is shown a table of
     // values he had inputted for the investment field.
     public JPanel getSubmitInvestmentPanel() {
-        submitInvestmentPanel.removeAll();
-        submitInvestmentPanel.setVisible(true);
+//        submitInvestmentPanel.setVisible(true);
         submitInvestmentPanel.setBackground(new Color(245, 222, 179));
         submitInvestmentPanel.setBounds(0, 0, 800, 700);
         //submitInvestmentPanel.setLayout(null);
@@ -362,7 +390,15 @@ public class GUI implements ActionListener {
         String[] arr2 = {"Name", "Current Value", "Money", "Platform"};
         JTable table = new JTable(arr, arr2);
         JScrollPane scrollPane = new JScrollPane(table);
+
+        addInvButton.setBounds(600,400,50,20);
+        addInvButton.addActionListener(this);
+
         submitInvestmentPanel.add(scrollPane);
+
+        submitInvestmentPanel.add(addInvButton);
+
+
 
         return submitInvestmentPanel;
     }
@@ -491,6 +527,7 @@ public class GUI implements ActionListener {
 
 
         }
+
         if (e.getSource() == oldClientButton) {
 
             JPanel x = getExistingClientPanel();
@@ -525,6 +562,8 @@ public class GUI implements ActionListener {
         if (e.getSource() == addInvButton) {
             frame.setVisible(false);
             JPanel x = getInvestmentPanel();
+            x.revalidate();
+            x.repaint();
             frame.add(x);
             frame.setContentPane(x);
             frame.setVisible(true);
@@ -556,11 +595,12 @@ public class GUI implements ActionListener {
 
         try {
             GUI app = new GUI();
+
         } catch (IOException e) {
             System.out.println("No File Found");
         }
+
+
     }
-
-
 }
 

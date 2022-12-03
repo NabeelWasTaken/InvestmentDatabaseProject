@@ -22,7 +22,11 @@ public class InvestmentDataBase implements Writable {
     }
 
     public void addIDB(Investment inv) {
+        EventLog.getInstance().logEvent(new Event("Investment named "  + inv.getName()
+                + " of value : " + inv.getCurrVal() + " was added to the Investment Database."));
         idb.add(inv);
+//        EventLog.getInstance().logEvent(new Event("Added Investment to the Investment Database."));
+
     }
 
     public void setIdb(ArrayList<Investment> idb) {

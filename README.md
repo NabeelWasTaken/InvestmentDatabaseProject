@@ -48,4 +48,22 @@ noticing that fields from investment class are added to the InvestmentDataBase
 the management of the investments page. 
 - You can reload the state of my application by refreshing my program 
 and clicking on the Existing Customer Button.
+
+# Phase 04 Task 2
+**Output after implementing methods and functions of Event and EventLog :**
+
+Your data has been saved successfully.
+
+Fri Dec 02 15:53:04 PST 2022
+
+Investment named Renault of value : 1300 was added to the Investment Database.
+
+Fri Dec 02 15:53:05 PST 2022
+
+Investment named Porsche of value : 800 was added to the Investment Database.
+
+Fri Dec 02 15:53:06 PST 2022
+
+Investment named Lotus of value : 70 was added to the Investment Database.
+
   

@@ -1,1 +1,110 @@
-{"Investments": []}
+{"Investments": [
+    {
+        "moneyInv": 120,
+        "currVal": 180,
+        "name": "Apple",
+        "platform": "Wealthsimple"
+    },
+    {
+        "moneyInv": 130,
+        "currVal": 1500,
+        "name": "Netflix",
+        "platform": "IKB"
+    },
+    {
+        "moneyInv": 300,
+        "currVal": 350,
+        "name": "Honda",
+        "platform": "WeaalthSimple"
+    },
+    {
+        "moneyInv": 3000,
+        "currVal": 1450,
+        "name": "Porsche",
+        "platform": "Rexona"
+    },
+    {
+        "moneyInv": 10,
+        "currVal": 300,
+        "name": "Renault",
+        "platform": "Wealthsimple"
+    },
+    {
+        "moneyInv": 560,
+        "currVal": 720,
+        "name": "Qwerty",
+        "platform": "IKB"
+    },
+    {
+        "moneyInv": 1300,
+        "currVal": 1500,
+        "name": "Renault",
+        "platform": "QWERTY"
+    },
+    {
+        "moneyInv": 2000,
+        "currVal": 1500,
+        "name": "QWERTY",
+        "platform": "WealthSimple"
+    },
+    {
+        "moneyInv": 230,
+        "currVal": 280,
+        "name": "Werty",
+        "platform": "WETUR"
+    },
+    {
+        "moneyInv": 1,
+        "currVal": 2,
+        "name": "h",
+        "platform": "ui"
+    },
+    {
+        "moneyInv": 300,
+        "currVal": 500,
+        "name": "Werst",
+        "platform": "IKB"
+    },
+    {
+        "moneyInv": 20,
+        "currVal": 70,
+        "name": "Rexona",
+        "platform": "IKB"
+    },
+    {
+        "moneyInv": 20,
+        "currVal": 70,
+        "name": "Destro",
+        "platform": "IKB"
+    },
+    {
+        "moneyInv": 300,
+        "currVal": 400,
+        "name": "Wer",
+        "platform": "WelathSimple"
+    },
+    {
+        "moneyInv": 790,
+        "currVal": 800,
+        "name": "Qwerty",
+        "platform": "Saturn"
+    },
+    {
+        "moneyInv": 199,
+        "currVal": 8000,
+        "name": "Kilds",
+        "platform": "WealthSimple"
+    },
+    {
+        "moneyInv": 69,
+        "currVal": 97,
+        "name": "IO",
+        "platform": "hj"
+    },
+    {
+        "moneyInv": 300,
+        "currVal": 800,
+        "name": "UI",
+        "platform": "Saturn"
+    }
+]}

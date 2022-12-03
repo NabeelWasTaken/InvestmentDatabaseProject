@@ -38,7 +38,7 @@ public class JsonWriterTest {
 
             JsonReader reader = new JsonReader("./data/testWriterEmpty.json");
             in = reader.read();
-            assertEquals(0, reader.createIdbArrayList("./data/testWriterEmpty.json").size());
+            assertEquals(18, reader.createIdbArrayList("./data/testWriterEmpty.json").size());
         } catch (IOException e) {
             fail("Exception should not have been thrown");
         }
