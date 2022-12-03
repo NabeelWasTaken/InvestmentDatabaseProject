@@ -66,4 +66,15 @@ Fri Dec 02 15:53:06 PST 2022
 
 Investment named Lotus of value : 70 was added to the Investment Database.
 
+# Phase 04 Task 3
+- My model package design consists of 5 Classes namely :Client, Expense,ExpenseDataBase, Investment and InvestmentDataBase.
+of which InvestmentDataBase is dependant on Investments and ExpenseDB is dependant on Expenses.
+- the model package also additionally consists Event and EventLog which essentially helps in the logging of events done by the user while interacting with the program.
+- The persistence package consists the JSONWriter,JSONReader and the Writable which Extracts data from the model classes and stores it in a JSON file.
+- the ui package consists of 3 Classes namely App,Main and GUI. These classes are used for the user to interact with the project .
+
+# Changes I would have done to refactor it more
+- If I were to be given more time then I could've possibly designed more use case for my project and wouldve added more useful classes to the modeel paackage.
+- I could've added more features to the list manipulation to the data added by the user such (Clear or remove a data stored).
+- Made my GUI more aesthetically beautiful by researching more about Java Swing methods and feaatures.
   
